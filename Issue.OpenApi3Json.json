@@ -7,19 +7,32 @@
   },
   "servers": [
     {
-      "url": "http://127.0.0.1:8000/issue",
+      "url": "http://127.0.0.1:8000",
       "variables": {}
     }
   ],
   "paths": {
-    "/php": {
+    "/public": {
       "get": {
         "tags": [
           "Misc"
         ],
         "summary": "getScore",
         "operationId": "getScore",
-        "parameters": [],
+        "parameters": [
+          {
+            "name": "AUTH-TOKEN",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "example": 1233
+            }
+          }
+        ],
         "responses": {
           "200": {
             "description": "",
